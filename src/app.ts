@@ -1,6 +1,5 @@
 import express, { Application, Request, Response } from "express"
-import { Document } from "mongoose"
-import { connectDB, TodoModel } from "../models/Todo"
+import { connectDB, TodoModel } from "./models/Todo"
 const app: Application = express()
 const PORT = process.env.PORT || 3000
 
