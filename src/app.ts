@@ -26,8 +26,13 @@ app.get("/todos", async (req: Request, res: Response): Promise<any> => {
 app.get("/todos/:id", async (req: Request, res: Response): Promise<any> => {
   connectDB()
   const id: number = +req.params.id
-  const result: any | null = await TodoModel.findOne({ id })
-  res.status(200).json(result || {})
+  const data: any | null = await TodoModel.findOne({ id })
+  const newObj: any = {}
+    newObj.id = data.id
+    newObj.username = data.username
+    newObj.title = data.title
+    newObj.completed = data.completed
+  res.status(200).json(data || {})
 })
 
 app.post("/todos/", async (req: Request, res: Response) => {
