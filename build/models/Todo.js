@@ -28,6 +28,7 @@ var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 var URI = process.env.URI;
 mongoose_1.default.set('useFindAndModify', true);
+mongoose_1.default.connect(URI, { useFindAndModify: false });
 function connectDB() {
     mongoose_1.default.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
 }

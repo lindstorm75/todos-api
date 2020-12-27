@@ -48,14 +48,22 @@ app.get("/", function (req, res) {
     res.send("Hello world!");
 });
 app.get("/todos", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var result;
+    var data, result;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 Todo_1.connectDB();
                 return [4 /*yield*/, Todo_1.TodoModel.find({})];
             case 1:
-                result = _a.sent();
+                data = _a.sent();
+                result = data.map(function (data) {
+                    var newObj = {};
+                    newObj.id = data.id;
+                    newObj.username = data.username;
+                    newObj.title = data.title;
+                    newObj.completed = data.completed;
+                    return newObj;
+                });
                 res.status(200).json(result);
                 return [2 /*return*/];
         }
@@ -82,6 +90,10 @@ app.post("/todos/", function (req, res) { return __awaiter(void 0, void 0, void 
         switch (_a.label) {
             case 0:
                 username = req.body.username, title = req.body.title;
+                if (req.body._id)
+                    delete req.body._id;
+                if (req.body.id)
+                    delete req.body.id;
                 if (!(!username || !title)) return [3 /*break*/, 1];
                 res.status(400).json({ message: "Bad request." });
                 return [3 /*break*/, 4];
@@ -105,13 +117,15 @@ app.post("/todos/", function (req, res) { return __awaiter(void 0, void 0, void 
     });
 }); });
 app.put("/todos/:id", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, todo, key, _a;
+    var id, todo, key, newObj, _a;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
                 id = +req.params.id;
                 if (req.body._id)
                     delete req.body._id;
+                if (req.body.id)
+                    delete req.body.id;
                 _b.label = 1;
             case 1:
                 _b.trys.push([1, 3, , 4]);
@@ -120,7 +134,12 @@ app.put("/todos/:id", function (req, res) { return __awaiter(void 0, void 0, voi
                 todo = _b.sent();
                 for (key in req.body)
                     todo[key] = req.body[key];
-                res.status(200).json(todo);
+                newObj = {};
+                newObj.id = todo.id;
+                newObj.username = todo.username;
+                newObj.title = todo.title;
+                newObj.completed = todo.completed;
+                res.status(200).json(newObj);
                 return [3 /*break*/, 4];
             case 3:
                 _a = _b.sent();
