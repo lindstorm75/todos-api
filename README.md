@@ -31,7 +31,7 @@ https://arcane-hollows-66380.herokuapp.com/todos
 ```
 https://arcane-hollows-66380.herokuapp.com/todos
 ```
-###  Body
+### ➡ Body
 ```json
 {
   "username": "Somchai",
@@ -39,7 +39,7 @@ https://arcane-hollows-66380.herokuapp.com/todos
 }
 ```
 ### ✅ Response
-```
+```json
 {
   "id": 3,
   "username": "Somchai",
@@ -52,7 +52,7 @@ https://arcane-hollows-66380.herokuapp.com/todos
 ```
 https://arcane-hollows-66380.herokuapp.com/todos/3
 ```
-### Body
+### ➡ Body
 ```json
 {
   "completed": true
@@ -67,7 +67,7 @@ https://arcane-hollows-66380.herokuapp.com/todos/3
   "completed": true
 }
 ```
-### Body
+### ➡ Body
 ```json
 {
   "username": "Manee"
