@@ -20,7 +20,7 @@ app.get("/todos", async (req: Request, res: Response): Promise<any> => {
     newObj.completed = data.completed
     return newObj
   })
-  res.status(200).json(result)
+  res.status(200).json(newObj)
 })
 
 app.get("/todos/:id", async (req: Request, res: Response): Promise<any> => {
