@@ -27,12 +27,13 @@ app.get("/todos/:id", async (req: Request, res: Response): Promise<any> => {
   connectDB()
   const id: number = +req.params.id
   const data: any | null = await TodoModel.findOne({ id })
+  if (data === undefined) return res.status(400).json({})
   const newObj: any = {}
   newObj.id = data.id
   newObj.username = data.username
   newObj.title = data.title
   newObj.completed = data.completed
-  res.status(200).json(newObj || {})
+  res.status(200).json(newObj)
 })
 
 app.post("/todos/", async (req: Request, res: Response) => {
