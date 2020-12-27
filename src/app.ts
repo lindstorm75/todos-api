@@ -20,7 +20,7 @@ app.get("/todos", async (req: Request, res: Response): Promise<any> => {
     newObj.completed = data.completed
     return newObj
   })
-  res.status(200).json(newObj)
+  res.status(200).json(result)
 })
 
 app.get("/todos/:id", async (req: Request, res: Response): Promise<any> => {
@@ -28,11 +28,11 @@ app.get("/todos/:id", async (req: Request, res: Response): Promise<any> => {
   const id: number = +req.params.id
   const data: any | null = await TodoModel.findOne({ id })
   const newObj: any = {}
-    newObj.id = data.id
-    newObj.username = data.username
-    newObj.title = data.title
-    newObj.completed = data.completed
-  res.status(200).json(data || {})
+  newObj.id = data.id
+  newObj.username = data.username
+  newObj.title = data.title
+  newObj.completed = data.completed
+  res.status(200).json(newObj || {})
 })
 
 app.post("/todos/", async (req: Request, res: Response) => {
