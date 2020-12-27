@@ -1,4 +1,4 @@
-import express, { Application, raw, Request, Response } from "express"
+import express, { Application, Request, Response } from "express"
 import { connectDB, TodoModel } from "./models/Todo"
 const app: Application = express()
 const PORT = process.env.PORT || 3000
@@ -39,8 +39,6 @@ app.get("/todos/:id", async (req: Request, res: Response): Promise<any> => {
 app.post("/todos/", async (req: Request, res: Response) => {
   const username: string = req.body.username,
       title: string = req.body.title
-  if (req.body._id) delete req.body._id
-  if (req.body.id) delete req.body.id
   if (!username || !title)
     res.status(400).json({ message: "Bad request." })
   else {
@@ -57,8 +55,6 @@ app.post("/todos/", async (req: Request, res: Response) => {
 
 app.put("/todos/:id", async (req: Request, res: Response) => {
   const id: number = +req.params.id
-  if (req.body._id) delete req.body._id
-  if (req.body.id) delete req.body.id
   try {
     const todo: any = await TodoModel.findOneAndUpdate({ id }, req.body)
     for (const key in req.body)
