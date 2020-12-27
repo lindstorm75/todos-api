@@ -1,4 +1,4 @@
-import express, { Application, Request, Response } from "express"
+import express, { Application, raw, Request, Response } from "express"
 import { connectDB, TodoModel } from "./models/Todo"
 const app: Application = express()
 const PORT = process.env.PORT || 3000
@@ -11,7 +11,15 @@ app.get("/", (req: Request, res: Response) => {
 
 app.get("/todos", async (req: Request, res: Response): Promise<any> => {
   connectDB()
-  const result: any[] = await TodoModel.find({})
+  const data: any[] = await TodoModel.find({})
+  const result: any[] = data.map((data: any) => {
+    const newObj: any = {}
+    newObj.id = data.id
+    newObj.username = data.username
+    newObj.title = data.title
+    newObj.completed = data.completed
+    return newObj
+  })
   res.status(200).json(result)
 })
 
@@ -49,7 +57,12 @@ app.put("/todos/:id", async (req: Request, res: Response) => {
     const todo: any = await TodoModel.findOneAndUpdate({ id }, req.body)
     for (const key in req.body)
       todo[key] = req.body[key]
-    res.status(200).json(todo)
+    const newObj: any = {}
+    newObj.id = todo.id
+    newObj.username = todo.username
+    newObj.title = todo.title
+    newObj.completed = todo.completed
+    res.status(200).json(newObj)
   } catch {
     res.status(404).json({ message: "Not found." })
   }

@@ -6,6 +6,8 @@ const URI = process.env.URI!
 
 mongoose.set('useFindAndModify', true)
 
+mongoose.connect(URI, { useFindAndModify: false });
+
 export function connectDB(): void {
   mongoose.connect(
     URI,
