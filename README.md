@@ -55,6 +55,7 @@ https://arcane-hollows-66380.herokuapp.com/todos/3
 ### ➡ Body
 ```json
 {
+  "title": "Get some sleep",
   "completed": true
 }
 ```
@@ -63,22 +64,7 @@ https://arcane-hollows-66380.herokuapp.com/todos/3
 {
   "id": 3,
   "username": "Somchai",
-  "title": "Exercise",
-  "completed": true
-}
-```
-### ➡ Body
-```json
-{
-  "username": "Manee"
-}
-```
-### ✅ Response
-```json
-{
-  "id": 3,
-  "username": "Manee",
-  "title": "Exercise",
+  "title": "Get some sleep",
   "completed": true
 }
 ```
