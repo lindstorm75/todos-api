@@ -56,15 +56,21 @@ app.post("/todos/", async (req: Request, res: Response) => {
 app.put("/todos/:id", async (req: Request, res: Response) => {
   const id: number = +req.params.id
   try {
-    const todo: any = await TodoModel.findOneAndUpdate({ id }, req.body)
-    for (const key in req.body)
-      todo[key] = req.body[key]
-    const newObj: any = {}
-    newObj.id = todo.id
-    newObj.username = todo.username
-    newObj.title = todo.title
-    newObj.completed = todo.completed
-    res.status(200).json(newObj)
+    const raw: any = req.body
+    const allowed: [string, string] = ["title", "completed"]
+    const filteredData: any = Object.keys(raw)
+      .filter(key => allowed.includes(key))
+      .reduce((obj: any, key: string) => {
+        obj[key] = raw[key]
+        return obj
+      }, {})
+    const todo: any = await TodoModel.findOneAndUpdate({ id }, filteredData)
+    const newOjb: any = {}
+    newOjb.id = todo.id
+    newOjb.username = todo.username
+    newOjb.title = filteredData.title
+    newOjb.completed = filteredData.completed
+    res.status(200).json(newOjb)
   } catch {
     res.status(404).json({ message: "Not found." })
   }
