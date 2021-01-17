@@ -38,15 +38,15 @@ app.get("/todos/:id", async (req, res)=> {
 })
 
 app.post("/todos/", async (req, res) => {
-  const { username, title } = req.body
-  if (!username || !title)
+  const { username, title, completed } = req.body
+  if (!username || !title || !completed)
     res.status(400).json({ message: "Bad request." })
   else {
     connectDB()
     const last = (await TodoModel.find().sort({ id: -1 }).limit(1))[0]
     let id = last === undefined ? 1 : Number(last.id) + 1
     const data = {
-      id, username, title, completed: false
+      id, username, title, completed
     }
     await TodoModel.create(data)
     res.status(200).json(data)
