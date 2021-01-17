@@ -5,6 +5,13 @@ const PORT = process.env.PORT || 3000
 
 app.use(express.json())
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+  next()
+})
+
 const allowedKeys = ["id", "username", "title", "completed"]
 
 const formatObj = (keys, target, backup) => {
@@ -39,14 +46,14 @@ app.get("/todos/:id", async (req, res)=> {
 
 app.post("/todos/", async (req, res) => {
   const { username, title, completed } = req.body
-  if (!username || !title || !completed)
+  if (!username || !title)
     res.status(400).json({ message: "Bad request." })
   else {
     connectDB()
     const last = (await TodoModel.find().sort({ id: -1 }).limit(1))[0]
     let id = last === undefined ? 1 : Number(last.id) + 1
     const data = {
-      id, username, title, completed
+      id, username, title, completed: completed === undefined ? false : completed
     }
     await TodoModel.create(data)
     res.status(200).json(data)
