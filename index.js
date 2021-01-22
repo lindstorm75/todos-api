@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000
 const todos = require("./routes/todos")
 const users = require("./routes/users")
 const products = require("./routes/products")
+const employees = require("./routes/employees")
 
 app.use(express.json())
 
@@ -24,5 +25,6 @@ app.get("/", (req, res) => {
 app.use("/todos", todos)
 app.use("/users", users)
 app.use("/products", products)
+app.use("/employees", employees)
 
 app.listen(PORT, () => console.log("Server's up and running at port: " + PORT))
