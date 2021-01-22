@@ -7,7 +7,7 @@ const allowedKeys = ["id", "username", "title", "completed"]
 const formatObj = (keys, target, backup) => {
   return keys.reduce((obj, key) => {
     if (target[key] !== undefined) obj[key] = target[key]
-    else obj[key] = backup[key]
+    else if (backup !== undefined) obj[key] = backup[key]
     return obj
   }, {})
 }
@@ -50,19 +50,20 @@ router.post("/", async (req, res) => {
 })
 
 router.put("/:id", async (req, res) => {
+  connectDB()
   const id = +req.params.id
   try {
     const raw = req.body
     const allowed = ["title", "completed"]
-    const filteredData = Object.keys(raw)
+    const validData = Object.keys(raw)
       .filter(key => allowed.includes(key))
       .reduce((obj, key) => {
         obj[key] = raw[key]
         return obj
       }, {})
-    const todo = await TodoModel.findOneAndUpdate({ id }, filteredData)
+    const data = await TodoModel.findOneAndUpdate({ id }, validData)
     closeDB()
-    const result = formatObj(allowedKeys, filteredData, todo)
+    const result = formatObj(allowedKeys, validData, data)
     res.status(200).json(result)
   } catch {
     res.status(404).json({ message: "Not found." })

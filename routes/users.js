@@ -63,9 +63,9 @@ router.put("/:id", async (req, res) => {
         obj[key] = raw[key]
         return obj
       }, {})
-    await UserModel.findOneAndUpdate({ id }, validData)
+    const data = await UserModel.findOneAndUpdate({ id }, validData)
     closeDB()
-    const filteredData = formatObj(allowedKeys, validData)
+    const filteredData = formatObj(allowedKeys, validData, data)
     res.status(200).json(filteredData)
   } catch {
     res.status(404).json({ message: "Not found." })

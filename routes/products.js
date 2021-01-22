@@ -52,9 +52,9 @@ router.post("/", async (req, res) => {
 })
 
 router.put("/:id", async (req, res) => {
-  connectDB()
   const id = +req.params.id
   try {
+    connectDB()
     const raw = req.body
     const allowed = ["name", "price", "imgs", "categoryId"]
     const validData = Object.keys(raw)
@@ -63,9 +63,9 @@ router.put("/:id", async (req, res) => {
         obj[key] = raw[key]
         return obj
       }, {})
-    await ProductModel.findOneAndUpdate({ id }, validData)
+    const data = await ProductModel.findOneAndUpdate({ id }, validData)
     closeDB()
-    const filteredData = formatObj(allowedKeys, validData)
+    const filteredData = formatObj(allowedKeys, validData, data)
     res.status(200).json(filteredData)
   } catch {
     res.status(404).json({ message: "Not found." })
