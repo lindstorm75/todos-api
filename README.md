@@ -242,7 +242,7 @@ https://arcane-hollows-66380.herokuapp.com/products/1
 
 ### 🐱‍💻 POST
 ```
-https://arcane-hollows-66380.herokuapp.com/users
+https://arcane-hollows-66380.herokuapp.com/products
 ```
 ### ➡ Body
 ```json
@@ -272,7 +272,7 @@ https://arcane-hollows-66380.herokuapp.com/users
 
 ### 🐱‍💻 PUT
 ```
-https://arcane-hollows-66380.herokuapp.com/users/3
+https://arcane-hollows-66380.herokuapp.com/products/3
 ```
 ### ➡ Body
 ```json
@@ -298,7 +298,7 @@ https://arcane-hollows-66380.herokuapp.com/users/3
 ```
 ## 🐱‍💻 DELETE
 ```
-https://arcane-hollows-66380.herokuapp.com/prducts/2
+https://arcane-hollows-66380.herokuapp.com/products/2
 ```
 ### ✅ Response
 ```json
