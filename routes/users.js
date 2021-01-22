@@ -31,5 +31,21 @@ router.get("/:id", async (req, res)=> {
   res.status(200).json(filteredData)
 })
 
+router.post("/", async (req, res) => {
+  const { username, password, firstName, lastName, email, address } = req.body
+  if (!username || !password || !firstName || !lastName, !email, !address)
+    res.status(400).json({ message: "Bad request." })
+  else {
+    connectDB()
+    const last = (await UserModel.find().sort({ id: -1 }).limit(1))[0]
+    const id = last === undefined ? 1 : Number(last.id) + 1
+    const data = {
+      id, username, password, firstName, lastName, email, address
+    }
+    await UserModel.create(data)
+    const filteredData = formatObj(allowedKeys, data)
+    res.status(200).json(filteredData)
+  }
+})
 
 module.exports = router
