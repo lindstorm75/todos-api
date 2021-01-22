@@ -1,11 +1,16 @@
-<h1 align="center">TodoList API - A simple CRUD API 🐱‍🏍</h1>
+<h1 align="center">API - A simple CRUD API 🐱‍🏍</h1>
 
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://en.wikipedia.org/wiki/Open_source)
 
 ## 🐱‍👤 Tech stack
-### **TypeScript**, **NodeJS**, **ExpressJS** and **Mongoose**
+### **NodeJS**, **ExpressJS** and **Mongoose**
 
-## 🐱‍💻 GET
+## Apis: [Todos](#todos), [Users](#users)
+
+## 🌕 Todos<a name="todos"></a>
+
+### 🐱‍💻 GET
+### 🔗 All todos
 ```
 https://arcane-hollows-66380.herokuapp.com/todos
 ```
@@ -26,8 +31,21 @@ https://arcane-hollows-66380.herokuapp.com/todos
   }
 ]
 ```
+### 🔗 A single todo
+```
+https://arcane-hollows-66380.herokuapp.com/todos/1
+```
+### ✅ Response
+```json
+{
+  "id": 1,
+  "username": "Somsri",
+  "title": "Drink water",
+  "completed": false
+},
+```
 
-## 🐱‍💻 POST
+### 🐱‍💻 POST
 ```
 https://arcane-hollows-66380.herokuapp.com/todos
 ```
@@ -48,7 +66,7 @@ https://arcane-hollows-66380.herokuapp.com/todos
 }
 ```
 
-## 🐱‍💻 PUT
+### 🐱‍💻 PUT
 ```
 https://arcane-hollows-66380.herokuapp.com/todos/3
 ```
@@ -68,7 +86,7 @@ https://arcane-hollows-66380.herokuapp.com/todos/3
   "completed": true
 }
 ```
-## 🐱‍💻 DELETE
+### 🐱‍💻 DELETE
 ```
 https://arcane-hollows-66380.herokuapp.com/todos/3
 ```
@@ -78,6 +96,111 @@ https://arcane-hollows-66380.herokuapp.com/todos/3
   "message": "Successfully deleted."
 }
 ```
+## 🌕 Users<a name="users"></a>
+
+### 🐱‍💻 GET
+### 🔗 All users
+```
+https://arcane-hollows-66380.herokuapp.com/users
+```
+### ✅ Response
+```json
+[
+  {
+    "id": 1,
+    "username": "thomas666",
+    "firstName": "Thomas",
+    "lastName": "the Train",
+    "email": "thomasthetrain666@gmail.com",
+    "address": "Khon Kaen, Thailand"
+  },
+  {
+    "id": 2,
+    "username": "Jeff555",
+    "firstName": "Jeff",
+    "lastName": "Lee",
+    "email": "jefflee55@gmail.com",
+    "address": "Tokyo, Japan"
+  }
+]
+```
+### 🔗 A single user
+```
+https://arcane-hollows-66380.herokuapp.com/users/1
+```
+### ✅ Response
+```json
+{
+  "id": 1,
+  "username": "thomas666",
+  "firstName": "Thomas",
+  "lastName": "the Train",
+  "email": "thomasthetrain666@gmail.com",
+  "address": "Khon Kaen, Thailand"
+}
+```
+
+### 🐱‍💻 POST
+```
+https://arcane-hollows-66380.herokuapp.com/users
+```
+### ➡ Body
+```json
+{
+  "username": "Jeff555",
+  "password": "mynameisjeff",
+  "firstName": "Jeff",
+  "lastName": "Lee",
+  "email": "jefflee55@gmail.com",
+  "address": "Tokyo, Japan"
+}
+```
+### ✅ Response
+```json
+{
+  "id": 3,
+  "username": "Jeff555",
+  "firstName": "Jeff",
+  "lastName": "Lee",
+  "email": "jeffee55@gmail.com",
+  "address": "Tokyo, Japan"
+}
+```
+
+### 🐱‍💻 PUT
+```
+https://arcane-hollows-66380.herokuapp.com/users/3
+```
+### ➡ Body
+```json
+{
+  "username": "Jeffy55",
+  "email": "anotherJeffy@gmail.com",
+  "address": "Saitama, Japan"
+}
+```
+### ✅ Response
+```json
+{
+  "id": 3,
+  "username": "Jeffy55",
+  "firstName": "Jeff",
+  "lastName": "Lee",
+  "email": "anotherJeffy@gmail.com",
+  "address": "Saitama, Japan"
+}
+```
+## 🐱‍💻 DELETE
+```
+https://arcane-hollows-66380.herokuapp.com/users/3
+```
+### ✅ Response
+```json
+{
+  "message": "Successfully deleted."
+}
+```
+
 ## Instalation
 ### Navigate inside the project and install node modules needed
 ```
