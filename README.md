@@ -5,7 +5,7 @@
 ## 🐱‍👤 Tech stack
 ### **NodeJS**, **ExpressJS** and **Mongoose**
 
-## Apis: [Todos](#todos), [Users](#users)
+## Apis: [Todos](#todos), [Users](#users), [Products](#products)
 
 ## 🌕 Todos<a name="todos"></a>
 
@@ -193,6 +193,112 @@ https://arcane-hollows-66380.herokuapp.com/users/3
 ## 🐱‍💻 DELETE
 ```
 https://arcane-hollows-66380.herokuapp.com/users/3
+```
+### ✅ Response
+```json
+{
+  "message": "Successfully deleted."
+}
+```
+## 🌕 Products<a name="products"></a>
+
+### 🐱‍💻 GET
+### 🔗 All products
+```
+https://arcane-hollows-66380.herokuapp.com/products
+```
+### ✅ Response
+```json
+[
+  {
+    "id": 1,
+    "name": "Xtrfy M4",
+    "price": 59,
+    "imgs": [
+      "https://cdn11.bigcommerce.com/s-r42h9th2fy/images/stencil/1280x1280/products/328/1305/XG-M4-RGB-RETRO__81620.1574817432.jpg?c=2?imbypass=on",
+      "https://xtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Herogallery_003-1024x512.jpg"
+    ],
+    "categoryId": "1234"
+  }
+]
+```
+### 🔗 A single product
+```
+https://arcane-hollows-66380.herokuapp.com/products/1
+```
+### ✅ Response
+```json
+{
+  "id": 1,
+  "name": "Xtrfy M4",
+  "price": 59,
+  "imgs": [
+    "https://cdn11.bigcommerce.com/s-r42h9th2fy/images/stencil/1280x1280/products/328/1305/XG-M4-RGB-RETRO__81620.1574817432.jpg?c=2?imbypass=on",
+    "https://xtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Herogallery_003-1024x512.jpg"
+  ],
+  "categoryId": "1234"
+}
+```
+
+### 🐱‍💻 POST
+```
+https://arcane-hollows-66380.herokuapp.com/users
+```
+### ➡ Body
+```json
+{
+  "name": "MacBook Pro M1",
+  "price": 1299,
+  "imgs": [
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000"
+  ],
+  "categoryId": "1212"
+}
+```
+### ✅ Response
+```json
+{
+  "id": 2,
+  "name": "MacBook Pro M1",
+  "price": 1299,
+  "imgs": [
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000"
+  ],
+  "categoryId": "1212"
+}
+```
+
+### 🐱‍💻 PUT
+```
+https://arcane-hollows-66380.herokuapp.com/users/3
+```
+### ➡ Body
+```json
+{
+  "name": "Apple MacBook Pro M1",
+  "imgs": [
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000",
+    "https://zdnet2.cbsistatic.com/hub/i/2020/11/16/37e33024-2892-4bb7-9d21-6ac6f7544def/apple-macbook-pro-m1-2020-5.jpg"
+  ]
+}
+```
+### ✅ Response
+```json
+{
+  "name": "Apple MacBook Pro M1",
+  "imgs": [
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000",
+    "https://zdnet2.cbsistatic.com/hub/i/2020/11/16/37e33024-2892-4bb7-9d21-6ac6f7544def/apple-macbook-pro-m1-2020-5.jpg"
+  ]
+}
+```
+## 🐱‍💻 DELETE
+```
+https://arcane-hollows-66380.herokuapp.com/prducts/2
 ```
 ### ✅ Response
 ```json
