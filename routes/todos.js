@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const connectDB = require("../models/DB")
+const { connectDB, closeDB } = require("../models/DB")
 const TodoModel = require("../models/Todo")
 
 const allowedKeys = ["id", "username", "title", "completed"]

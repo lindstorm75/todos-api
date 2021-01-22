@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const connectDB = require("../models/DB")
+const { connectDB, closeDB } = require("../models/DB")
 const UserModel = require("../models/User")
 
 const allowedKeys = ["id", "username", "firstName", "lastName", "email", "address"]
@@ -15,8 +15,8 @@ const formatObj = (keys, target, backup) => {
 router.get("/", async (req, res) => {
   connectDB()
   const raw = await UserModel.find({})
+  closeDB()
   const filteredData = raw.map(user => {
-    console.log(user)
     return formatObj(allowedKeys, user)
   })
   res.status(200).json(filteredData)
@@ -26,8 +26,10 @@ router.get("/:id", async (req, res)=> {
   connectDB()
   const id = +req.params.id
   const raw = await UserModel.findOne({ id })
+  closeDB()
   if (raw === null) return res.status(404).json({})
   const filteredData = formatObj(allowedKeys, raw)
+  console.log(filteredData)
   res.status(200).json(filteredData)
 })
 
@@ -43,9 +45,39 @@ router.post("/", async (req, res) => {
       id, username, password, firstName, lastName, email, address
     }
     await UserModel.create(data)
+    closeDB()
     const filteredData = formatObj(allowedKeys, data)
     res.status(200).json(filteredData)
   }
+})
+
+router.put("/:id", async (req, res) => {
+  connectDB()
+  const id = +req.params.id
+  try {
+    const raw = req.body
+    const allowed = ["username", "password", "firstName", "lastName", "email", "address"]
+    const validData = Object.keys(raw)
+      .filter(key => allowed.includes(key))
+      .reduce((obj, key) => {
+        obj[key] = raw[key]
+        return obj
+      }, {})
+    await UserModel.findOneAndUpdate({ id }, validData)
+    closeDB()
+    const filteredData = formatObj(allowedKeys, validData)
+    res.status(200).json(filteredData)
+  } catch {
+    res.status(404).json({ message: "Not found." })
+  }
+})
+
+router.delete("/:id", async (req, res) => {
+  connectDB()
+  const id = +req.params.id
+  await UserModel.deleteOne({ id })
+  closeDB()
+  res.status(200).json({ message: "Successfully deleted." })
 })
 
 module.exports = router

@@ -10,4 +10,8 @@ function connectDB() {
   )
 }
 
-module.exports = connectDB
+function closeDB() {
+  mongoose.connection.close()
+}
+
+module.exports = { connectDB, closeDB }
