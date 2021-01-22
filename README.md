@@ -107,20 +107,20 @@ https://arcane-hollows-66380.herokuapp.com/users
 ```json
 [
   {
-    id: 1,
-    username: "thomas666",
-    firstName: "Thomas",
-    lastName: "the Train",
-    email: "thomasthetrain666@gmail.com",
-    address: "Khon Kaen, Thailand"
+    "id": 1,
+    "username": "thomas666",
+    "firstName": "Thomas",
+    "lastName": "the Train",
+    "email": "thomasthetrain666@gmail.com",
+    "address": "Khon Kaen, Thailand"
   },
   {
-    id: 2,
-    username: "Jeff555",
-    firstName: "Jeff",
-    lastName: "Lee",
-    email: "jefflee55@gmail.com",
-    address: "Tokyo, Japan"
+    "id": 2,
+    "username": "Jeff555",
+    "firstName": "Jeff",
+    "lastName": "Lee",
+    "email": "jefflee55@gmail.com",
+    "address": "Tokyo, Japan"
   }
 ]
 ```
@@ -131,12 +131,12 @@ https://arcane-hollows-66380.herokuapp.com/users/1
 ### ✅ Response
 ```json
 {
-  id: 1,
-  username: "thomas666",
-  firstName: "Thomas",
-  lastName: "the Train",
-  email: "thomasthetrain666@gmail.com",
-  address: "Khon Kaen, Thailand"
+  "id": 1,
+  "username": "thomas666",
+  "firstName": "Thomas",
+  "lastName": "the Train",
+  "email": "thomasthetrain666@gmail.com",
+  "address": "Khon Kaen, Thailand"
 }
 ```
 
