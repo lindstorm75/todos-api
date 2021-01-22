@@ -5,7 +5,7 @@
 ## 🐱‍👤 Tech stack
 ### **NodeJS**, **ExpressJS** and **Mongoose**
 
-## Apis: [Todos](#todos), [Users](#users), [Products](#products)
+## Apis: [Todos](#todos), [Users](#users), [Products](#products), [Employees](#employees)
 
 ## 🌕 Todos<a name="todos"></a>
 
@@ -46,6 +46,7 @@ https://arcane-hollows-66380.herokuapp.com/todos/1
 ```
 
 ### 🐱‍💻 POST
+#### 🟢 Available fields: username(String), title(String), completed(String, optional)
 ```
 https://arcane-hollows-66380.herokuapp.com/todos
 ```
@@ -67,6 +68,7 @@ https://arcane-hollows-66380.herokuapp.com/todos
 ```
 
 ### 🐱‍💻 PUT
+#### 🟢 Available fields: title(String), completed(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/todos/3
 ```
@@ -141,6 +143,7 @@ https://arcane-hollows-66380.herokuapp.com/users/1
 ```
 
 ### 🐱‍💻 POST
+#### 🟢 Available fields: username(String), password(String), firstName(String), lastName(String), email(String), address(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/users
 ```
@@ -168,6 +171,7 @@ https://arcane-hollows-66380.herokuapp.com/users
 ```
 
 ### 🐱‍💻 PUT
+#### 🟢 Available fields: username(String), password(String), firstName(String), lastName(String), email(String), address(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/users/3
 ```
@@ -241,6 +245,7 @@ https://arcane-hollows-66380.herokuapp.com/products/1
 ```
 
 ### 🐱‍💻 POST
+#### 🟢 Available fields: name(String), price(Number), imgs(Array of Strings), categoryId(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/products
 ```
@@ -271,6 +276,7 @@ https://arcane-hollows-66380.herokuapp.com/products
 ```
 
 ### 🐱‍💻 PUT
+#### 🟢 Available fields: name(String), price(Number), imgs(Array of Strings), categoryId(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/products/2
 ```
@@ -288,17 +294,132 @@ https://arcane-hollows-66380.herokuapp.com/products/2
 ### ✅ Response
 ```json
 {
+  "id": 2,
+  "price": 1299,
   "name": "Apple MacBook Pro M1",
   "imgs": [
     "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",
     "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000",
     "https://zdnet2.cbsistatic.com/hub/i/2020/11/16/37e33024-2892-4bb7-9d21-6ac6f7544def/apple-macbook-pro-m1-2020-5.jpg"
-  ]
+  ],
+  "categoryId": "1212"
 }
 ```
 ## 🐱‍💻 DELETE
 ```
 https://arcane-hollows-66380.herokuapp.com/products/2
+```
+### ✅ Response
+```json
+{
+  "message": "Successfully deleted."
+}
+```
+
+## 🌕 Employees<a name="employees"></a>
+
+### 🐱‍💻 GET
+### 🔗 All employees
+```
+https://arcane-hollows-66380.herokuapp.com/employees
+```
+### ✅ Response
+```json
+[
+  {
+    "sn": "0123456789",
+    "firstName": "Thomas",
+    "lastName": "Edison",
+    "departmentId": 1,
+    "salary": 78000,
+    "email": "thomasedison66@gmail.com",
+    "address": "Nowhere to be found"
+  },
+  {
+    "sn": "9876543210",
+    "firstName": "Manee",
+    "lastName": "Deejai",
+    "departmentId": 2,
+    "salary": 67000,
+    "email": "maneeDeejai@gmail.com",
+    "address": "Bangkok, Thailand"
+  }
+]
+```
+### 🔗 A single employee
+```
+https://arcane-hollows-66380.herokuapp.com/employees/0123456789
+```
+### ✅ Response
+```json
+{
+  "sn": "0123456789",
+  "firstName": "Thomas",
+  "lastName": "Edison",
+  "departmentId": 1,
+  "salary": 78000,
+  "email": "thomasedison66@gmail.com",
+  "address": "Nowhere to be found"
+}
+```
+
+### 🐱‍💻 POST
+#### 🟢 Available fields: sn(String), firstName(String), lastName(String), departmentId(Number), salary(Number), email(String), address(String)
+```
+https://arcane-hollows-66380.herokuapp.com/employees
+```
+### ➡ Body
+```json
+{
+  "sn": "1122334455",
+  "firstName": "Sommai",
+  "lastName": "Jaiyai",
+  "departmentId": 2,
+  "salary": 65000,
+  "email": "naisommaieiei@outlook.com",
+  "address": "Khon Kaen, Thailand"
+}
+```
+### ✅ Response
+```json
+{
+  "sn": "1122334455",
+  "firstName": "Sommai",
+  "lastName": "Jaiyai",
+  "departmentId": 2,
+  "salary": 65000,
+  "email": "naisommaieiei@outlook.com",
+  "address": "Khon Kaen, Thailand"
+}
+```
+
+### 🐱‍💻 PUT
+#### 🟢 Available fields: sn(String), firstName(String), lastName(String), departmentId(Number), salary(Number), email(String), address(String)
+```
+https://arcane-hollows-66380.herokuapp.com/employees/9876543210
+```
+### ➡ Body
+```json
+{
+  "salary": 70000,
+  "departmentId": 3
+}
+```
+### ✅ Response
+```json
+{
+  "sn": "9876543210",
+  "firstName": "Manee",
+  "lastName": "Deejai",
+  "departmentId": 3,
+  "salary": 70000,
+  "email": "maneeDeejai@gmail.com",
+  "address": "Bangkok, Thailand"
+}
+```
+## 🐱‍💻 DELETE
+```
+https://arcane-hollows-66380.herokuapp.com/employees/1122334455
 ```
 ### ✅ Response
 ```json
