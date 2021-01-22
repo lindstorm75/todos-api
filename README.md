@@ -5,7 +5,7 @@
 ## 🐱‍👤 Tech stack
 ### **NodeJS**, **ExpressJS** and **Mongoose**
 
-## Apis: [Todos](#todos), [Users](#users), [Products](#products)
+## Apis: [Todos](#todos), [Users](#users), [Products](#products), [Employees](#employees)
 
 ## 🌕 Todos<a name="todos"></a>
 
@@ -302,6 +302,116 @@ https://arcane-hollows-66380.herokuapp.com/products/2
 ## 🐱‍💻 DELETE
 ```
 https://arcane-hollows-66380.herokuapp.com/products/2
+```
+### ✅ Response
+```json
+{
+  "message": "Successfully deleted."
+}
+```
+
+## 🌕 Employees<a name="employees"></a>
+
+### 🐱‍💻 GET
+### 🔗 All employees
+```
+https://arcane-hollows-66380.herokuapp.com/employees
+```
+### ✅ Response
+```json
+[
+  {
+    "sn": "0123456789",
+    "firstName": "Thomas",
+    "lastName": "Edison",
+    "departmentId": 1,
+    "salary": 78000,
+    "email": "thomasedison66@gmail.com",
+    "address": "Nowhere to be found"
+  },
+  {
+    "sn": "9876543210",
+    "firstName": "Manee",
+    "lastName": "Deejai",
+    "departmentId": 2,
+    "salary": 67000,
+    "email": "maneeDeejai@gmail.com",
+    "address": "Bangkok, Thailand"
+  }
+]
+```
+### 🔗 A single employee
+```
+https://arcane-hollows-66380.herokuapp.com/employees/0123456789
+```
+### ✅ Response
+```json
+{
+  "sn": "0123456789",
+  "firstName": "Thomas",
+  "lastName": "Edison",
+  "departmentId": 1,
+  "salary": 78000,
+  "email": "thomasedison66@gmail.com",
+  "address": "Nowhere to be found"
+}
+```
+
+### 🐱‍💻 POST
+```
+https://arcane-hollows-66380.herokuapp.com/employees
+```
+### ➡ Body
+```json
+{
+  "sn": "1122334455",
+  "firstName": "Sommai",
+  "lastName": "Jaiyai",
+  "departmentId": 2,
+  "salary": 65000,
+  "email": "naisommaieiei@outlook.com",
+  "address": "Khon Kaen, Thailand"
+}
+```
+### ✅ Response
+```json
+{
+  "sn": "1122334455",
+  "firstName": "Sommai",
+  "lastName": "Jaiyai",
+  "departmentId": 2,
+  "salary": 65000,
+  "email": "naisommaieiei@outlook.com",
+  "address": "Khon Kaen, Thailand"
+}
+```
+
+### 🐱‍💻 PUT
+```
+https://arcane-hollows-66380.herokuapp.com/employees/9876543210
+```
+### ➡ Body
+```json
+{
+  "salary": 70000,
+  "departmentId": 3
+}
+```
+### ✅ Response
+```json
+{
+  "sn": "9876543210",
+  "firstName": "Manee",
+  "lastName": "Deejai",
+  "departmentId": 3,
+  "salary": 70000,
+  "email": "maneeDeejai@gmail.com",
+  "address": "Bangkok, Thailand"
+}
+```
+## 🐱‍💻 DELETE
+```
+https://arcane-hollows-66380.herokuapp.com/employees/1122334455
 ```
 ### ✅ Response
 ```json
