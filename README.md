@@ -272,7 +272,7 @@ https://arcane-hollows-66380.herokuapp.com/products
 
 ### 🐱‍💻 PUT
 ```
-https://arcane-hollows-66380.herokuapp.com/products/3
+https://arcane-hollows-66380.herokuapp.com/products/2
 ```
 ### ➡ Body
 ```json
