@@ -54,33 +54,33 @@ router.post("/", async (req, res) => {
   }
 })
 
-// router.put("/:id", async (req, res) => {
-//   connectDB()
-//   const id = +req.params.id
-//   try {
-//     const raw = req.body
-//     const allowed = ["username", "password", "firstName", "lastName", "email", "address"]
-//     const validData = Object.keys(raw)
-//       .filter(key => allowed.includes(key))
-//       .reduce((obj, key) => {
-//         obj[key] = raw[key]
-//         return obj
-//       }, {})
-//     const data = await UserModel.findOneAndUpdate({ id }, validData)
-//     closeDB()
-//     const filteredData = formatObj(allowedKeys, validData, data)
-//     res.status(200).json(filteredData)
-//   } catch {
-//     res.status(404).json({ message: "Not found." })
-//   }
-// })
+router.put("/:sn", async (req, res) => {
+  connectDB()
+  const sn = req.params.sn
+  try {
+    const raw = req.body
+    const allowed = ["sn", "password", "firstName", "lastName", "departmentId", "salary", "email", "address"]
+    const validData = Object.keys(raw)
+      .filter(key => allowed.includes(key))
+      .reduce((obj, key) => {
+        obj[key] = raw[key]
+        return obj
+      }, {})
+    const data = await EmployeeModel.findOneAndUpdate({ sn }, validData)
+    closeDB()
+    const filteredData = formatObj(allowedKeys, validData, data)
+    res.status(200).json(filteredData)
+  } catch {
+    res.status(404).json({ message: "Not found." })
+  }
+})
 
-// router.delete("/:id", async (req, res) => {
-//   connectDB()
-//   const id = +req.params.id
-//   await UserModel.deleteOne({ id })
-//   closeDB()
-//   res.status(200).json({ message: "Successfully deleted." })
-// })
+router.delete("/:sn", async (req, res) => {
+  connectDB()
+  const sn = req.params.sn
+  await EmployeeModel.deleteOne({ sn })
+  closeDB()
+  res.status(200).json({ message: "Successfully deleted." })
+})
 
 module.exports = router
