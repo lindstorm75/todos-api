@@ -15,6 +15,7 @@ const formatObj = (keys, target, backup) => {
 router.get("/", async (req, res) => {
   connectDB()
   const raw = await TodoModel.find({})
+  closeDB()
   const result = raw.map(todo => {
     return formatObj(allowedKeys, todo)
   })
@@ -25,6 +26,7 @@ router.get("/:id", async (req, res)=> {
   connectDB()
   const id = +req.params.id
   const raw = await TodoModel.findOne({ id })
+  closeDB()
   if (raw === null) return res.status(404).json({})
   const result = formatObj(allowedKeys, raw)
   res.status(200).json(result)
@@ -42,6 +44,7 @@ router.post("/", async (req, res) => {
       id, username, title, completed: completed === undefined ? false : completed
     }
     await TodoModel.create(data)
+    closeDB()
     res.status(200).json(data)
   }
 })
@@ -58,6 +61,7 @@ router.put("/:id", async (req, res) => {
         return obj
       }, {})
     const todo = await TodoModel.findOneAndUpdate({ id }, filteredData)
+    closeDB()
     const result = formatObj(allowedKeys, filteredData, todo)
     res.status(200).json(result)
   } catch {
@@ -68,6 +72,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const id = +req.params.id
   await TodoModel.deleteOne({ id })
+  closeDB()
   res.status(200).json({ message: "Successfully deleted." })
 })
 
