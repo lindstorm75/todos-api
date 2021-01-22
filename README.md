@@ -288,12 +288,15 @@ https://arcane-hollows-66380.herokuapp.com/products/2
 ### ✅ Response
 ```json
 {
+  "id": 2,
+  "price": 1299,
   "name": "Apple MacBook Pro M1",
   "imgs": [
     "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",
     "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000",
     "https://zdnet2.cbsistatic.com/hub/i/2020/11/16/37e33024-2892-4bb7-9d21-6ac6f7544def/apple-macbook-pro-m1-2020-5.jpg"
-  ]
+  ],
+  "categoryId": "1212"
 }
 ```
 ## 🐱‍💻 DELETE
