@@ -1,12 +1,11 @@
 const express = require("express")
-const TodoModel = require("./models/Todo")
-const UserModel = require("./models/User")
 const app = express()
 const PORT = process.env.PORT || 3000
 
 // routes
 const todos = require("./routes/todos")
 const users = require("./routes/users")
+const products = require("./routes/products")
 
 app.use(express.json())
 
@@ -23,7 +22,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/todos", todos)
-
 app.use("/users", users)
+app.use("/products", products)
 
 app.listen(PORT, () => console.log("Server's up and running at port: " + PORT))
