@@ -68,7 +68,7 @@ https://arcane-hollows-66380.herokuapp.com/todos
 ```
 
 ### 🐱‍💻 PUT
-#### 🟢 Available fields: title(String), completed(String)
+#### 🟢 Available fields: username(String), title(String), completed(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/todos/3
 ```
