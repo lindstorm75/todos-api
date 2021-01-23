@@ -54,7 +54,7 @@ router.put("/:id", async (req, res) => {
   const id = +req.params.id
   try {
     const raw = req.body
-    const allowed = ["title", "completed"]
+    const allowed = ["username", "title", "completed"]
     const validData = Object.keys(raw)
       .filter(key => allowed.includes(key))
       .reduce((obj, key) => {
