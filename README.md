@@ -46,7 +46,7 @@ https://arcane-hollows-66380.herokuapp.com/todos/1
 ```
 
 ### 🐱‍💻 POST
-#### 🟢 Available fields: username(String), title(String), completed(String, optional)
+#### 🟢 Available fields: ```username```(String), ```title```(String), ```completed```(String, optional)
 ```
 https://arcane-hollows-66380.herokuapp.com/todos
 ```
@@ -68,7 +68,7 @@ https://arcane-hollows-66380.herokuapp.com/todos
 ```
 
 ### 🐱‍💻 PUT
-#### 🟢 Available fields: username(String), title(String), completed(String)
+#### 🟢 Available fields: ```username```(String), ```title```(String), ```completed```(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/todos/3
 ```
@@ -143,7 +143,7 @@ https://arcane-hollows-66380.herokuapp.com/users/1
 ```
 
 ### 🐱‍💻 POST
-#### 🟢 Available fields: username(String), password(String), firstName(String), lastName(String), email(String), address(String)
+#### 🟢 Available fields: ```username```(String), ```password```(String), ```firstName```(String), ```lastName```(String), ```email```(String), ```address```(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/users
 ```
@@ -171,7 +171,7 @@ https://arcane-hollows-66380.herokuapp.com/users
 ```
 
 ### 🐱‍💻 PUT
-#### 🟢 Available fields: username(String), password(String), firstName(String), lastName(String), email(String), address(String)
+#### 🟢 Available fields: ```username```(String), ```password```(String), ```firstName```(String), ```lastName```(String), ```email```(String), ```address```(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/users/3
 ```
@@ -245,7 +245,7 @@ https://arcane-hollows-66380.herokuapp.com/products/1
 ```
 
 ### 🐱‍💻 POST
-#### 🟢 Available fields: name(String), price(Number), imgs(Array of Strings), categoryId(String)
+#### 🟢 Available fields: ```name```(String), ```price```(Number), ```imgs```(Array of Strings), ```categoryId```(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/products
 ```
@@ -276,7 +276,7 @@ https://arcane-hollows-66380.herokuapp.com/products
 ```
 
 ### 🐱‍💻 PUT
-#### 🟢 Available fields: name(String), price(Number), imgs(Array of Strings), categoryId(String)
+#### 🟢 Available fields: ```name```(String), ```price```(Number), ```imgs```(Array of Strings), ```categoryId```(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/products/2
 ```
@@ -364,7 +364,7 @@ https://arcane-hollows-66380.herokuapp.com/employees/0123456789
 ```
 
 ### 🐱‍💻 POST
-#### 🟢 Available fields: sn(String), firstName(String), lastName(String), departmentId(Number), salary(Number), email(String), address(String)
+#### 🟢 Available fields: ```sn```(String), ```firstName```(String), ```lastName```(String), ```departmentId```(Number), ```salary```(Number), ```email```(String), ```address```(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/employees
 ```
@@ -394,7 +394,7 @@ https://arcane-hollows-66380.herokuapp.com/employees
 ```
 
 ### 🐱‍💻 PUT
-#### 🟢 Available fields: sn(String), firstName(String), lastName(String), departmentId(Number), salary(Number), email(String), address(String)
+#### 🟢 Available fields: ```sn```(String), ```firstName```(String), ```lastName```(String), ```departmentId```(Number), ```salary```(Number), ```email```(String), ```address```(String)
 ```
 https://arcane-hollows-66380.herokuapp.com/employees/9876543210
 ```
