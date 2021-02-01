@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+const fs = require("fs")
 const PORT = process.env.PORT || 3000
 
 // routes
@@ -19,7 +20,7 @@ app.use(function(req, res, next) {
 
 
 app.get("/", (req, res) => {
-  res.send("Hello world!")
+  res.sendFile (__dirname + "/index.html")
 })
 
 app.use("/todos", todos)
