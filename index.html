@@ -7,7 +7,11 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Noto Sans JP', sans-serif;
     }
@@ -25,11 +29,15 @@
       position: absolute;
       bottom: 0.2rem;
       left: 0;
-      transition: all .3s;
+      transition: all .3s ease-in-out;
     }
     a:hover::before {
       height: 1.5rem;
       opacity: .5;
+    }
+    pre {
+      font-family: 'Fira Code', monospace;
+      white-space: pre-line;
     }
   </style>
 </head>
@@ -39,7 +47,106 @@
     <h3 class="text-xl">Avaiable APIs: <a href="#todo">Todo</a>,<a href="">User</a>,<a href="">Customer</a>,<a href="">Product</a></h3>
 
     <section class="my-6" id="todo">
-      <h2 class="text-2xl border-l-8 border-yellow-400 pl-4">Todo API</h2>
+      <h2 class="text-2xl border-l-8 border-yellow-400 pl-4 mb-4">Todo API</h2>
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4">GET</h3>
+        <h3 class="text-lg mb-2">🔗 All todos</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/todos
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          [
+          &nbsp;&nbsp;{
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 1,
+          &nbsp;&nbsp;&nbsp;&nbsp;"username": "Somsri",
+          &nbsp;&nbsp;&nbsp;&nbsp;"title": "Drink water",
+          &nbsp;&nbsp;&nbsp;&nbsp;"completed": false
+          &nbsp;&nbsp;},
+          &nbsp;&nbsp;{
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 2,
+          &nbsp;&nbsp;&nbsp;&nbsp;"username": "Sommai",
+          &nbsp;&nbsp;&nbsp;&nbsp;"title": "Get some sleep",
+          &nbsp;&nbsp;&nbsp;&nbsp;"completed": false
+          &nbsp;&nbsp;}
+          ]
+        </pre>
+        <h3 class="text-lg mb-2">🔗 A single todo</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/todos/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          {
+          &nbsp;&nbsp;"id": 1,
+          &nbsp;&nbsp;"username": "Somsri",
+          &nbsp;&nbsp;"title": "Drink water",
+          &nbsp;&nbsp;"completed": false
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4">POST</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">Available fields: username(String), title(String), completed(String, optional)</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/todos
+        </pre>
+        <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"username": "Somchai",
+          &nbsp;&nbsp;"title": "Exercise"
+          }
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"id": 3,
+          &nbsp;&nbsp;"username": "Somchai",
+          &nbsp;&nbsp;"title": "Exercise",
+          &nbsp;&nbsp;"completed": false
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4">PUT</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">Available fields: username(String), title(String), completed(String)</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/todos/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"title": "Get some sleep",
+          &nbsp;&nbsp;"completed": true
+          }
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"id": 3,
+          &nbsp;&nbsp;"username": "Somchai",
+          &nbsp;&nbsp;"title": "Get some sleep",
+          &nbsp;&nbsp;"completed": true
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4">DELETE</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/todos/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"message": "Successfully deleted."
+          }
+        </pre>
+      </div>
+
     </section>
     <section class="my-6" id="user">
       <h2 class="text-2xl border-l-8 border-yellow-400 pl-4">User API</h2>
