@@ -49,7 +49,7 @@
     <section class="my-6" id="todo">
       <h2 class="text-2xl border-l-8 border-yellow-400 pl-4 mb-4">Todo API</h2>
       <div class="border-b-2 border-gray-100 mb-8">
-        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4">GET</h3>
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-6">GET</h3>
         <h3 class="text-lg mb-2">🔗 All todos</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
           https://arcane-hollows-66380.herokuapp.com/todos
@@ -87,12 +87,12 @@
       </div>
 
       <div class="border-b-2 border-gray-100 mb-8">
-        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4">POST</h3>
-        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">Available fields: username(String), title(String), completed(String, optional)</h3>
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-6">POST</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
           https://arcane-hollows-66380.herokuapp.com/todos
         </pre>
         <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">Available fields: username(String), title(String), completed(String, optional)</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
           {
           &nbsp;&nbsp;"username": "Somchai",
@@ -111,12 +111,12 @@
       </div>
 
       <div class="border-b-2 border-gray-100 mb-8">
-        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4">PUT</h3>
-        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">Available fields: username(String), title(String), completed(String)</h3>
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-6">PUT</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
           https://arcane-hollows-66380.herokuapp.com/todos/:id
         </pre>
         <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">Available fields: username(String), title(String), completed(String)</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
           {
           &nbsp;&nbsp;"title": "Get some sleep",
@@ -135,7 +135,7 @@
       </div>
 
       <div class="border-b-2 border-gray-100 mb-8">
-        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4">DELETE</h3>
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-6">DELETE</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
           https://arcane-hollows-66380.herokuapp.com/todos/:id
         </pre>
@@ -148,8 +148,124 @@
       </div>
 
     </section>
+
     <section class="my-6" id="user">
       <h2 class="text-2xl border-l-8 border-yellow-400 pl-4">User API</h2>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-6">GET</h3>
+        <h3 class="text-lg mb-2">🔗 All users</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/users
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          [
+          &nbsp;&nbsp;{
+          &nbsp;&nbsp;&nbsp;&nbsp;id: 1,
+          &nbsp;&nbsp;&nbsp;&nbsp;username: "thomas667788",
+          &nbsp;&nbsp;&nbsp;&nbsp;firstName: "Thomas",
+          &nbsp;&nbsp;&nbsp;&nbsp;lastName: "the Train",
+          &nbsp;&nbsp;&nbsp;&nbsp;email: "thomasthetrain666@gmail.com",
+          &nbsp;&nbsp;&nbsp;&nbsp;address: "Khon Kaen, Thailand"
+          &nbsp;&nbsp;},
+          &nbsp;&nbsp;{
+          &nbsp;&nbsp;&nbsp;&nbsp;id: 2,
+          &nbsp;&nbsp;&nbsp;&nbsp;username: "Jeff557",
+          &nbsp;&nbsp;&nbsp;&nbsp;firstName: "Jeff",
+          &nbsp;&nbsp;&nbsp;&nbsp;lastName: "Lee",
+          &nbsp;&nbsp;&nbsp;&nbsp;email: "jefflee55@gmail.com",
+          &nbsp;&nbsp;&nbsp;&nbsp;address: "Tokyo, Japan"
+          &nbsp;&nbsp;},
+          ]
+        </pre>
+        <h3 class="text-lg mb-2">🔗 A single user</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/users/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          {
+          &nbsp;&nbsp;id: 1,
+          &nbsp;&nbsp;username: "thomas667788",
+          &nbsp;&nbsp;firstName: "Thomas",
+          &nbsp;&nbsp;lastName: "the Train",
+          &nbsp;&nbsp;email: "thomasthetrain666@gmail.com",
+          &nbsp;&nbsp;address: "Khon Kaen, Thailand"
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-6">POST</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/users
+        </pre>
+        <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">Available fields: username(String), password(String), firstName(String), lastName(String), email(String), address(String)</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"username": "Jeff555",
+          &nbsp;&nbsp;"password": "mynameisjeff",
+          &nbsp;&nbsp;"firstName": "Jeff",
+          &nbsp;&nbsp;"lastName": "Lee",
+          &nbsp;&nbsp;"email": "jefflee55@gmail.com",
+          &nbsp;&nbsp;"address": "Tokyo, Japan"
+          }
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"id": 3,
+          &nbsp;&nbsp;"username": "Jeff555",
+          &nbsp;&nbsp;"firstName": "Jeff",
+          &nbsp;&nbsp;"lastName": "Lee",
+          &nbsp;&nbsp;"email": "jeffee55@gmail.com",
+          &nbsp;&nbsp;"address": "Tokyo, Japan"
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-6">PUT</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/users/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">Available fields: username(String), password(String), firstName(String), lastName(String), email(String), address(String)</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"username": "Jeffy55",
+          &nbsp;&nbsp;"email": "anotherJeffy@gmail.com",
+          &nbsp;&nbsp;"address": "Saitama, Japan"
+          }
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"id": 3,
+          &nbsp;&nbsp;"username": "Jeffy55",
+          &nbsp;&nbsp;"firstName": "Jeff",
+          &nbsp;&nbsp;"lastName": "Lee",
+          &nbsp;&nbsp;"email": "anotherJeffy@gmail.com",
+          &nbsp;&nbsp;"address": "Saitama, Japan"
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-6">DELETE</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/users/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {
+          &nbsp;&nbsp;"message": "Successfully deleted."
+          }
+        </pre>
+      </div>
+
     </section>
     <section class="my-6" id="customer">
       <h2 class="text-2xl border-l-8 border-yellow-400 pl-4">Customer API</h2>
