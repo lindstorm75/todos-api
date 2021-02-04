@@ -37,7 +37,9 @@
     }
     pre {
       font-family: 'Fira Code', monospace;
-      white-space: pre-line;
+      white-space: nowrap;
+      max-width: 100%;
+      overflow-x: scroll;
     }
     .line-code {
       color: white;
@@ -47,9 +49,9 @@
   </style>
 </head>
 <body class="flex justify-center">
-  <div class="container py-8 px-8 md:px-20 lg:px-40 xl:px-60">
+  <div class="container py-8 px-4 md:px-20 lg:px-40 xl:px-60">
     <h1 class="text-gray-800 pb-2 w-max border-b-4 border-yellow-500 text-4xl font-semibold mb-6">CRUD APIs</h1>
-    <h3 class="text-xl">Avaiable APIs: <a href="#todo">Todo</a>,<a href="#user">User</a>,<a href="">Customer</a>,<a href="">Product</a></h3>
+    <h3 class="text-xl">Avaiable APIs: <a href="#todo">Todo</a>,<a href="#user">User</a>,<a href="employee">Employee</a>,<a href="">Product</a></h3>
 
     <section class="my-6" id="todo">
       <h2 class="text-2xl border-l-8 border-yellow-400 pl-4 mb-4">Todo API</h2>
@@ -61,19 +63,19 @@
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
-          [
-          &nbsp;&nbsp;{
-          &nbsp;&nbsp;&nbsp;&nbsp;"id": 1,
-          &nbsp;&nbsp;&nbsp;&nbsp;"username": "Somsri",
-          &nbsp;&nbsp;&nbsp;&nbsp;"title": "Drink water",
-          &nbsp;&nbsp;&nbsp;&nbsp;"completed": false
-          &nbsp;&nbsp;},
-          &nbsp;&nbsp;{
-          &nbsp;&nbsp;&nbsp;&nbsp;"id": 2,
-          &nbsp;&nbsp;&nbsp;&nbsp;"username": "Sommai",
-          &nbsp;&nbsp;&nbsp;&nbsp;"title": "Get some sleep",
-          &nbsp;&nbsp;&nbsp;&nbsp;"completed": false
-          &nbsp;&nbsp;}
+          [<br>
+          &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 1,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"username": "Somsri",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"title": "Drink water",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"completed": false<br>
+          &nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 2,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"username": "Sommai",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"title": "Get some sleep",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"completed": false<br>
+          &nbsp;&nbsp;}<br>
           ]
         </pre>
         <h3 class="text-lg mb-2">🔗 A single todo</h3>
@@ -82,11 +84,11 @@
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
-          {
-          &nbsp;&nbsp;"id": 1,
-          &nbsp;&nbsp;"username": "Somsri",
-          &nbsp;&nbsp;"title": "Drink water",
-          &nbsp;&nbsp;"completed": false
+          {<br>
+          &nbsp;&nbsp;"id": 1,<br>
+          &nbsp;&nbsp;"username": "Somsri",<br>
+          &nbsp;&nbsp;"title": "Drink water",<br>
+          &nbsp;&nbsp;"completed": false<br>
           }
         </pre>
       </div>
@@ -103,18 +105,18 @@
           Boolean: <span class="bg-green-500 px-2 text-white rounded">completed</span>
         </h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"username": "Somchai",
-          &nbsp;&nbsp;"title": "Exercise"
+          {<br>
+          &nbsp;&nbsp;"username": "Somchai",<br>
+          &nbsp;&nbsp;"title": "Exercise"<br>
           }
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"id": 3,
-          &nbsp;&nbsp;"username": "Somchai",
-          &nbsp;&nbsp;"title": "Exercise",
-          &nbsp;&nbsp;"completed": false
+          {<br>
+          &nbsp;&nbsp;"id": 3,<br>
+          &nbsp;&nbsp;"username": "Somchai",<br>
+          &nbsp;&nbsp;"title": "Exercise",<br>
+          &nbsp;&nbsp;"completed": false<br>
           }
         </pre>
       </div>
@@ -131,18 +133,18 @@
           Boolean: <span class="bg-green-500 px-2 text-white rounded">completed</span>
         </h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"title": "Get some sleep",
-          &nbsp;&nbsp;"completed": true
+          {<br>
+          &nbsp;&nbsp;"title": "Get some sleep",<br>
+          &nbsp;&nbsp;"completed": true<br>
           }
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"id": 3,
-          &nbsp;&nbsp;"username": "Somchai",
-          &nbsp;&nbsp;"title": "Get some sleep",
-          &nbsp;&nbsp;"completed": true
+          {<br>
+          &nbsp;&nbsp;"id": 3,<br>
+          &nbsp;&nbsp;"username": "Somchai",<br>
+          &nbsp;&nbsp;"title": "Get some sleep",<br>
+          &nbsp;&nbsp;"completed": true<br>
           }
         </pre>
       </div>
@@ -154,8 +156,8 @@
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"message": "Successfully deleted."
+          {<br>
+          &nbsp;&nbsp;"message": "Successfully deleted."<br>
           }
         </pre>
       </div>
@@ -173,23 +175,23 @@
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
-          [
-          &nbsp;&nbsp;{
-          &nbsp;&nbsp;&nbsp;&nbsp;id: 1,
-          &nbsp;&nbsp;&nbsp;&nbsp;username: "thomas667788",
-          &nbsp;&nbsp;&nbsp;&nbsp;firstName: "Thomas",
-          &nbsp;&nbsp;&nbsp;&nbsp;lastName: "the Train",
-          &nbsp;&nbsp;&nbsp;&nbsp;email: "thomasthetrain666@gmail.com",
-          &nbsp;&nbsp;&nbsp;&nbsp;address: "Khon Kaen, Thailand"
-          &nbsp;&nbsp;},
-          &nbsp;&nbsp;{
-          &nbsp;&nbsp;&nbsp;&nbsp;id: 2,
-          &nbsp;&nbsp;&nbsp;&nbsp;username: "Jeff557",
-          &nbsp;&nbsp;&nbsp;&nbsp;firstName: "Jeff",
-          &nbsp;&nbsp;&nbsp;&nbsp;lastName: "Lee",
-          &nbsp;&nbsp;&nbsp;&nbsp;email: "jefflee55@gmail.com",
-          &nbsp;&nbsp;&nbsp;&nbsp;address: "Tokyo, Japan"
-          &nbsp;&nbsp;},
+          [<br>
+          &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;id: 1,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;username: "thomas667788",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;firstName: "Thomas",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;lastName: "the Train",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;email: "thomasthetrain666@gmail.com",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;address: "Khon Kaen, Thailand"<br>
+          &nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;id: 2,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;username: "Jeff557",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;firstName: "Jeff",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;lastName: "Lee",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;email: "jefflee55@gmail.com",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;address: "Tokyo, Japan"<br>
+          &nbsp;&nbsp;}<br>
           ]
         </pre>
         <h3 class="text-lg mb-2">🔗 A single user</h3>
@@ -198,13 +200,13 @@
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
-          {
-          &nbsp;&nbsp;id: 1,
-          &nbsp;&nbsp;username: "thomas667788",
-          &nbsp;&nbsp;firstName: "Thomas",
+          {<br>
+          &nbsp;&nbsp;id: 1,<br>
+          &nbsp;&nbsp;username: "thomas667788",<br>
+          &nbsp;&nbsp;firstName: "Thomas",<br>
           &nbsp;&nbsp;lastName: "the Train",
-          &nbsp;&nbsp;email: "thomasthetrain666@gmail.com",
-          &nbsp;&nbsp;address: "Khon Kaen, Thailand"
+          &nbsp;&nbsp;email: "thomasthetrain666@gmail.com",<br>
+          &nbsp;&nbsp;address: "Khon Kaen, Thailand"<br>
           }
         </pre>
       </div>
@@ -224,24 +226,24 @@
           String: <span class="bg-green-500 px-2 text-white rounded">address</span>
         </h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"username": "Jeff555",
-          &nbsp;&nbsp;"password": "mynameisjeff",
-          &nbsp;&nbsp;"firstName": "Jeff",
-          &nbsp;&nbsp;"lastName": "Lee",
-          &nbsp;&nbsp;"email": "jefflee55@gmail.com",
-          &nbsp;&nbsp;"address": "Tokyo, Japan"
+          {<br>
+          &nbsp;&nbsp;"username": "Jeff555",<br>
+          &nbsp;&nbsp;"password": "mynameisjeff",<br>
+          &nbsp;&nbsp;"firstName": "Jeff",<br>
+          &nbsp;&nbsp;"lastName": "Lee",<br>
+          &nbsp;&nbsp;"email": "jefflee55@gmail.com",<br>
+          &nbsp;&nbsp;"address": "Tokyo, Japan"<br>
           }
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"id": 3,
-          &nbsp;&nbsp;"username": "Jeff555",
-          &nbsp;&nbsp;"firstName": "Jeff",
-          &nbsp;&nbsp;"lastName": "Lee",
-          &nbsp;&nbsp;"email": "jeffee55@gmail.com",
-          &nbsp;&nbsp;"address": "Tokyo, Japan"
+          {<br>
+          &nbsp;&nbsp;"id": 3,<br>
+          &nbsp;&nbsp;"username": "Jeff555",<br>
+          &nbsp;&nbsp;"firstName": "Jeff",<br>
+          &nbsp;&nbsp;"lastName": "Lee",<br>
+          &nbsp;&nbsp;"email": "jeffee55@gmail.com",<br>
+          &nbsp;&nbsp;"address": "Tokyo, Japan"<br>
           }
         </pre>
       </div>
@@ -261,21 +263,21 @@
           String: <span class="bg-green-500 px-2 text-white rounded">address</span>
         </h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"username": "Jeffy55",
-          &nbsp;&nbsp;"email": "anotherJeffy@gmail.com",
-          &nbsp;&nbsp;"address": "Saitama, Japan"
+          {<br>
+          &nbsp;&nbsp;"username": "Jeffy55",<br>
+          &nbsp;&nbsp;"email": "anotherJeffy@gmail.com",<br>
+          &nbsp;&nbsp;"address": "Saitama, Japan"<br>
           }
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"id": 3,
-          &nbsp;&nbsp;"username": "Jeffy55",
-          &nbsp;&nbsp;"firstName": "Jeff",
-          &nbsp;&nbsp;"lastName": "Lee",
-          &nbsp;&nbsp;"email": "anotherJeffy@gmail.com",
-          &nbsp;&nbsp;"address": "Saitama, Japan"
+          {<br>
+          &nbsp;&nbsp;"id": 3,<br>
+          &nbsp;&nbsp;"username": "Jeffy55",<br>
+          &nbsp;&nbsp;"firstName": "Jeff",<br>
+          &nbsp;&nbsp;"lastName": "Lee",<br>
+          &nbsp;&nbsp;"email": "anotherJeffy@gmail.com",<br>
+          &nbsp;&nbsp;"address": "Saitama, Japan"<br>
           }
         </pre>
       </div>
@@ -287,18 +289,285 @@
         </pre>
         <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
         <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
-          {
-          &nbsp;&nbsp;"message": "Successfully deleted."
+          {<br>
+          &nbsp;&nbsp;"message": "Successfully deleted."<br>
           }
         </pre>
       </div>
 
     </section>
+
     <section class="my-6" id="customer">
-      <h2 class="text-2xl border-l-8 border-yellow-400 pl-4">Customer API</h2>
+      <h2 class="text-2xl border-l-8 border-yellow-400 pl-4">Employee API</h2>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-2">GET</h3>
+        <h3 class="text-lg mb-2">🔗 All employees</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/employees
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          [<br>
+          &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"sn": "0123456789",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"firstName": "Thomas",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"lastName": "Edison",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"departmentId": 1,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"salary": 78000,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"email": "thomasedison66@gmail.com",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"address": "Nowhere to be found"<br>
+          &nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"sn": "9876543210",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"firstName": "Manee",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"lastName": "Deejai",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"departmentId": 2,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"salary": 67000,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"email": "maneeDeejai@gmail.com",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"address": "Bangkok, Thailand"<br>
+          &nbsp;&nbsp;}
+          ]
+        </pre>
+        <h3 class="text-lg mb-2">🔗 A single employee</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/employees/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          {<br>
+          &nbsp;&nbsp;"sn": "0123456789",<br>
+          &nbsp;&nbsp;"firstName": "Thomas",<br>
+          &nbsp;&nbsp;"lastName": "Edison",<br>
+          &nbsp;&nbsp;"departmentId": 1,<br>
+          &nbsp;&nbsp;"salary": 78000,<br>
+          &nbsp;&nbsp;"email": "thomasedison66@gmail.com",<br>
+          &nbsp;&nbsp;"address": "Nowhere to be found"<br>
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-2">POST</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/employees
+        </pre>
+        <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">
+          String: <span class="bg-green-500 px-2 text-white rounded">sn</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">firstName</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">lastName</span>,
+          Number: <span class="bg-green-500 px-2 text-white rounded">departmentId</span>,
+          Number: <span class="bg-green-500 px-2 text-white rounded">salary</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">email</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">address</span>
+        </h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"sn": "1122334455",<br>
+          &nbsp;&nbsp;"firstName": "Sommai",<br>
+          &nbsp;&nbsp;"lastName": "Jaiyai",<br>
+          &nbsp;&nbsp;"departmentId": 2,<br>
+          &nbsp;&nbsp;"salary": 65000,<br>
+          &nbsp;&nbsp;"email": "naisommaieiei@outlook.com",<br>
+          &nbsp;&nbsp;"address": "Khon Kaen, Thailand"<br>
+          }
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"sn": "1122334455",<br>
+          &nbsp;&nbsp;"firstName": "Sommai",<br>
+          &nbsp;&nbsp;"lastName": "Jaiyai",<br>
+          &nbsp;&nbsp;"departmentId": 2,<br>
+          &nbsp;&nbsp;"salary": 65000,<br>
+          &nbsp;&nbsp;"email": "naisommaieiei@outlook.com",<br>
+          &nbsp;&nbsp;"address": "Khon Kaen, Thailand"<br>
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-2">PUT</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/employees/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">
+          String: <span class="bg-green-500 px-2 text-white rounded">sn</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">firstName</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">lastName</span>,
+          Number: <span class="bg-green-500 px-2 text-white rounded">departmentId</span>,
+          Number: <span class="bg-green-500 px-2 text-white rounded">salary</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">email</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">address</span>
+        </h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"salary": 70000,<br>
+          &nbsp;&nbsp;"departmentId": 3<br>
+          }
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"sn": "9876543210",<br>
+          &nbsp;&nbsp;"firstName": "Manee",<br>
+          &nbsp;&nbsp;"lastName": "Deejai",<br>
+          &nbsp;&nbsp;"departmentId": 3,<br>
+          &nbsp;&nbsp;"salary": 70000,<br>
+          &nbsp;&nbsp;"email": "maneeDeejai@gmail.com",<br>
+          &nbsp;&nbsp;"address": "Bangkok, Thailand"<br>
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-2">DELETE</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/employees/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"message": "Successfully deleted."<br>
+          }
+        </pre>
+      </div>
+
     </section>
     <section class="my-6" id="product">
       <h2 class="text-2xl border-l-8 border-yellow-400 pl-4">Product API</h2>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-2">GET</h3>
+        <h3 class="text-lg mb-2">🔗 All products</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/products
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          [<br>
+          &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 1,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"name": "Xtrfy M4",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"price": 59,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"imgs": [<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"https://cdn11.bigcommerce.com/s-r42h9th2fy/images/stencil/1280x1280/products/328/1305/XG-M4-RGB-RETRO__81620.1574817432.jpg?c=2?imbypass=on",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"https://xtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Herogallery_003-1024x512.jpg"<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;],<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"categoryId": "1234"<br>
+          &nbsp;&nbsp;}<br>
+          ]
+        </pre>
+        <h3 class="text-lg mb-2">🔗 A single product</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/products/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          {<br>
+          &nbsp;&nbsp;"id": 1,<br>
+          &nbsp;&nbsp;"name": "Xtrfy M4",<br>
+          &nbsp;&nbsp;"price": 59,<br>
+          &nbsp;&nbsp;"imgs": [<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://cdn11.bigcommerce.com/s-r42h9th2fy/images/stencil/1280x1280/products/328/1305/XG-M4-RGB-RETRO__81620.1574817432.jpg?c=2?imbypass=on",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://xtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Herogallery_003-1024x512.jpg"<br>
+          &nbsp;&nbsp;],<br>
+          &nbsp;&nbsp;"categoryId": "1234"<br>
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-2">POST</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/products
+        </pre>
+        <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">
+          String: <span class="bg-green-500 px-2 text-white rounded">name</span>,
+          Number: <span class="bg-green-500 px-2 text-white rounded">price</span>,
+          Array of Strings: <span class="bg-green-500 px-2 text-white rounded">imgs</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">categoryId</span>
+        </h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"name": "MacBook Pro M1",<br>
+          &nbsp;&nbsp;"price": 1299,<br>
+          &nbsp;&nbsp;"imgs": [<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000"<br>
+          &nbsp;&nbsp;],<br>
+          &nbsp;&nbsp;"categoryId": "1212"<br>
+          }
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"id": 2,<br>
+          &nbsp;&nbsp;"name": "MacBook Pro M1",<br>
+          &nbsp;&nbsp;"price": 1299,<br>
+          &nbsp;&nbsp;"imgs": [<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000"<br>
+          &nbsp;&nbsp;],<br>
+          &nbsp;&nbsp;"categoryId": "1212"<br>
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-2">PUT</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/products/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-yellow-400 pl-2 mb-2">Body</h3>
+        <h3 class="text-lg border-l-8 border-red-400 pl-2 mb-2">
+          String: <span class="bg-green-500 px-2 text-white rounded">name</span>,
+          Number: <span class="bg-green-500 px-2 text-white rounded">price</span>,
+          Array of Strings: <span class="bg-green-500 px-2 text-white rounded">imgs</span>,
+          String: <span class="bg-green-500 px-2 text-white rounded">categoryId</span>
+        </h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"name": "Apple MacBook Pro M1",<br>
+          &nbsp;&nbsp;"imgs": [<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://zdnet2.cbsistatic.com/hub/i/2020/11/16/37e33024-2892-4bb7-9d21-6ac6f7544def/apple-macbook-pro-m1-2020-5.jpg"<br>
+          &nbsp;&nbsp;]<br>
+          }
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"id": 2,<br>
+          &nbsp;&nbsp;"price": 1299,<br>
+          &nbsp;&nbsp;"name": "Apple MacBook Pro M1",<br>
+          &nbsp;&nbsp;"imgs": [<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-pro-13-og-202011?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604347427000",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-spacegray-select-202011?wid=1280&hei=1190&fmt=jpeg&qlt=80&.v=1603406905000",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"https://zdnet2.cbsistatic.com/hub/i/2020/11/16/37e33024-2892-4bb7-9d21-6ac6f7544def/apple-macbook-pro-m1-2020-5.jpg"<br>
+          &nbsp;&nbsp;],<br>
+          &nbsp;&nbsp;"categoryId": "1212"<br>
+          }
+        </pre>
+      </div>
+
+      <div class="border-b-2 border-gray-100 mb-8">
+        <h3 class="text-xl border-l-8 border-gray-400 pl-2 my-4 mb-2">DELETE</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-5">
+          https://arcane-hollows-66380.herokuapp.com/products/:id
+        </pre>
+        <h3 class="text-lg border-l-8 border-green-400 pl-2 mb-2">Response</h3>
+        <pre class="bg-gray-800 w-max h-100 text-white p-4 rounded-lg text-md mb-6">
+          {<br>
+          &nbsp;&nbsp;"message": "Successfully deleted."<br>
+          }
+        </pre>
+      </div>
+
     </section>
   </div>
 </body>
